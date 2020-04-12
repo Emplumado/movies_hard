@@ -1,8 +1,13 @@
+const fs =require('fs');
+const moviesJSON=fs.readFileSync("./data/movies.json",'utf-8');
+let movies=JSON.parse(moviesJSON);
+
+
 function contenidoTabMasVotadas(){
     const titulo="Las Mas Votadas";
     let masVotadas=0;
 
-    const moviesFiltered=movies.filter(function(elem){
+    const moviesFiltered=movies.movies.filter(function(elem){
         return elem.vote_average>=7;
     });
 

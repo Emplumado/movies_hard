@@ -1,7 +1,12 @@
+const fs =require('fs');
+const moviesJSON=fs.readFileSync("./data/movies.json",'utf-8');
+let movies=JSON.parse(moviesJSON);
+
+
 function contenidoTabEnCartelera(){
     const titulo="En Cartelera​";
-    const totalPeliculas="Tenemos "+movies.length+" peliculas:";
-    const arregloContenido=movies.map(function(elem){
+    const totalPeliculas="Tenemos "+movies.movies.length+" peliculas:";
+    const arregloContenido=movies.movies.map(function(elem){
         return "Titulo: "+elem.title+ '\n'+'\n' +"Reseña​: "+elem.overview+'\n'+"____________________________________________________________________________________"+'\n';
     });
     let listaContenido='\n';

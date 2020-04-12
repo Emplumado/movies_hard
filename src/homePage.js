@@ -3,16 +3,6 @@ const moviesJSON=fs.readFileSync("./data/movies.json",'utf-8');
 let movies=JSON.parse(moviesJSON);
 
 
-/*
-let listaTitulos='\n';
-for(let elem of movies.movies){
-    console.log(elem.title);
-};
-*/
-
-
-//console.log(listaTitulos);
-
 function contenidoTabHome(){
 
     const titulo="Bienvenidos a DH Movies el mejor sitio para encontrar las mejores películas, incluso mucho mejor que Netflix, Cuevana y PopCorn​"

@@ -1,8 +1,13 @@
+const fs = require('fs');
+const faqJSON = fs.readFileSync('./data/faqs.json','utf-8');
+const faqs = JSON.parse(faqJSON);
+
+
 function contenidoTabPreguntasFrecuentes(){
     const titulo="Preguntas Frecuentes";
     let totalPreguntas=0;
     let listadoFaqs='\n';
-    faqs.forEach(function(elem){
+    faqs.faqs.forEach(function(elem){
         totalPreguntas=totalPreguntas+1;
         listadoFaqs=listadoFaqs+elem.faq_title+'\n'+'\n'+elem.faq_answer+'\n'+"______________________________________________________________________________________________________________________"+'\n'+'\n'+'\n';
     });
