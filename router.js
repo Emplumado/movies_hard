@@ -1,49 +1,44 @@
-const http = require('http');
 const index=require('./src/index');
 
-let tab;
+module.exports={
+    "route": function(request,response){
+        switch (request.url) {
 
-switch (res.url) {
+            // Home
+            case '/':
+                response.end(index.homePage);
+                break;
 
-    // Home
-    case '/':
+            // En cartelera
+            case '/en-cartelera':
+                response.end(index.enCartelera);
+                break;
 
-        res.end(index.homePage);
-        break;
+            //Mas Votadas
+            case '/mas-votadas':
+                response.end(index.masVotadas);
+                break;
 
-    // En cartelera
-    case '/en-cartelera':
+            //Sucursales
+            case '/sucursales':
+                response.end(index.sucursales);
+                break;
 
-        res.end(index.enCartelera);
-        break;
+            //Contacto
+            case '/contacto':
+                response.end(index.contacto);
+                break;
 
-    //Mas Votadas
-    case '/mas-votadas':
+            //Preguntas Frecuentes
+            case '/preguntas-frecuentes':
+                response.end(index.preguntasFrecuentes);
+                break;
 
-        res.end(index.masVotadas);
-        break;
-
-    //Sucursales
-    case '/sucursales':
-
-        res.end(index.sucursales);
-        break;
-
-    //Contacto
-    case '/contacto':
-
-        res.end(index.contacto);
-        break;
-
-    //Preguntas Frecuentes
-    case '/preguntas-frecuentes':
-
-        res.end(index.preguntasFrecuentes);
-        break;
-
-    default:
-        res.end('404 not found')
+            default:
+                response.end('404 not found')
+        };
+    }
 };
 
 
-module.exoports=res.end;
+
